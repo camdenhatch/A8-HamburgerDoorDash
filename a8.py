@@ -5,8 +5,6 @@
 # Import random for generating random numbers
 import random
 
-import random
-
 # These are all the classes:
 # Order Class 
 class Order (): 
