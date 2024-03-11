@@ -13,6 +13,7 @@ class Order ():
     # Instance variable to store the number of burgers in the order
         self.burger_count = self.randomBurgers
 
+    # Method that returns a number between 1 and 20
     def randomBurgers (self):
         return random.randint(1, 20)
 
