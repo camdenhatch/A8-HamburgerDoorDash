@@ -1,9 +1,23 @@
 # Camden Hatch, Rasa Ichimori, Machael Backman, Jooyoung Jeon, Porter Rasmussen
 # Section 4
+# Description 
+
+# Import random for generating random numbers
+import random
 
 import random
 
 # These are all the classes:
+# Order Class 
+class Order (): 
+    # Constructor
+    def __init__(self):
+    # Instance variable to store the number of burgers in the order
+        self.burger_count = self.randomBurgers
+
+    def randomBurgers (self):
+        return random.randint(1, 20)
+
 
 class Person:
     def __init__(self):
