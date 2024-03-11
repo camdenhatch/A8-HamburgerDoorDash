@@ -1,11 +1,10 @@
 # Camden Hatch, Rasa Ichimori, Machael Backman, Jooyoung Jeon, Porter Rasmussen
 # Section 4
-# Description 
+# This program tracks exactly how many hamburgers each customer eats.  
 
 # Import random for generating random numbers
 import random
 
-# These are all the classes:
 # Order Class 
 class Order (): 
     # Constructor
@@ -17,16 +16,30 @@ class Order ():
     def randomBurgers (self):
         return random.randint(1, 20)
 
-
+# Person Class
 class Person:
+    # Constructor
     def __init__(self):
+    # Instance variable called customer_name
         self.customer_name = self.randomName()
 
-
+    # Method that contains a list of 9 names
     def randomName(self):
-        lsCustomers = ["Jefe", "El Guapo", "Lucky Day", "Ned Nederlander", "Dusty Bottoms", "Harry Flugleman", "Carmen", "Invisible Swordsman", "Singing Bush"]
+        lsCustomers = ["Jefe", "El Guapo", "Lucky Day", "Ned Nederlander", "Dusty Bottoms", "Harry Flugleman", "Carmen", \
+                       "Invisible Swordsman", "Singing Bush"]
+        # Randomly returns one of the 9 names when called
         index = random.randint(0, len(lsCustomers) - 1)
         return lsCustomers[index]
+
+
+# Customer Class 
+class Customer (Person): 
+    # Constructor class that inherits from parent Person class
+    def __init__(self):
+        super().__init__()
+    # Instance variable in the constructor that is assigned an order object
+        self.order = Order ()
+
 
 
 # For loop:
