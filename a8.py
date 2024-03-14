@@ -70,5 +70,6 @@ for iCount in range (0, 99) :
 lstCustSorted = sorted(dictCustAndBurgCount.items(), key=lambda x: x[1], reverse=True)
 
 # Print this new list sorted from values in dictionary:
-for customer_name, burger_count in lstCustSorted:
-    print(f"{customer_name}, {burger_count}")
+for iCount in range (0, (len(lstCustSorted) -1) ) :
+    print(lstCustSorted[iCount][0])
+    iCount += 1
