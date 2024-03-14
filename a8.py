@@ -61,7 +61,8 @@ for iCount in range (0, 99) :
     else :
         # Add customer's name as new key in dictionary and then give the loop the signal to continue to a new object:
         dictCustAndBurgCount[objCustomer.customer_name] = objCustomer.order.burger_count
-        iCount += 1
+
+    iCount += 1
 
     
 # Print list of customers and total burgers ordered sorted by most number of burgers:
