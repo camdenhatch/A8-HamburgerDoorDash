@@ -25,7 +25,7 @@ class Person:
 
     # Method that contains a list of 9 names
     def randomName(self) :
-        lstCustomers = ["Jefe", "El Guapo", "Lucky Day", "Ned Nederlander", "Dusty Bottoms", "Harry Flugleman", "Carmen", \
+        lstCustomers = ["Jefe", "El Guapo", "Lucky Day", "Ned Nederlander", "Dusty Bottoms", "Harry Flugleman", "Carmen",
                        "Invisible Swordsman", "Singing Bush"]
         # Randomly returns one of the 9 names when called
         index = random.randint(0, len(lstCustomers) - 1)
@@ -70,5 +70,5 @@ for iCount in range (0, 99) :
 lstCustSorted = sorted(dictCustAndBurgCount.items(), key=lambda x: x[1], reverse=True)
 
 # Print this new list sorted from values in dictionary:
-for iCount in range (0, len(lstCustSorted)):
-    print(lstCustSorted[iCount])
+for customer_name, burger_count in lstCustSorted:
+    print(f"{customer_name}, {burger_count}")
