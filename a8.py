@@ -71,5 +71,6 @@ lstCustSorted = sorted(dictCustAndBurgCount.items(), key=lambda x: x[1], reverse
 
 # Print this new list sorted from values in dictionary:
 for iCount in range (0, (len(lstCustSorted) -1) ) :
-    print(lstCustSorted[iCount][0])
+    print(f"{lstCustSorted[iCount][0].ljust(19)} {lstCustSorted[iCount][1]}")
+    
     iCount += 1
