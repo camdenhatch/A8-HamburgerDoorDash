@@ -10,7 +10,7 @@ class Order ():
     # Constructor
     def __init__(self):
     # Instance variable to store the number of burgers in the order
-        self.burger_count = self.randomBurgers
+        self.burger_count = self.randomBurgers()
 
     # Method that returns a number between 1 and 20
     def randomBurgers (self):
@@ -24,12 +24,12 @@ class Person:
         self.customer_name = self.randomName()
 
     # Method that contains a list of 9 names
-    def randomName(self):
-        lsCustomers = ["Jefe", "El Guapo", "Lucky Day", "Ned Nederlander", "Dusty Bottoms", "Harry Flugleman", "Carmen", \
+    def randomName(self) :
+        lstCustomers = ["Jefe", "El Guapo", "Lucky Day", "Ned Nederlander", "Dusty Bottoms", "Harry Flugleman", "Carmen", \
                        "Invisible Swordsman", "Singing Bush"]
         # Randomly returns one of the 9 names when called
-        index = random.randint(0, len(lsCustomers) - 1)
-        return lsCustomers[index]
+        index = random.randint(0, len(lstCustomers) - 1)
+        return lstCustomers[index]
 
 
 # Customer Class 
@@ -50,17 +50,17 @@ dictCustAndBurgCount = {}
 for iCount in range (0, 99) :
     # Adding 100 customers into queue:
     # starts with creating a customer object:
-    objCustomer = Customer()
+    objCustomer = Customer ()
     # Append it to queue list: 
     queueCustomer.append(objCustomer)
 
     # Check if object name is already in dictionary:
     if objCustomer.customer_name in dictCustAndBurgCount :
         # Add order count to object in dictionary with same name:
-        dictCustAndBurgCount[objCustomer.customer_name].order += objCustomer.order
+        dictCustAndBurgCount[objCustomer.customer_name] += objCustomer.order.burger_count
     else :
         # Add customer's name as new key in dictionary and then give the loop the signal to continue to a new object:
-        dictCustAndBurgCount[objCustomer.customer_name] = objCustomer.order
+        dictCustAndBurgCount[objCustomer.customer_name] = objCustomer.order.burger_count
         iCount += 1
 
     
@@ -69,5 +69,5 @@ for iCount in range (0, 99) :
 lstCustSorted = sorted(dictCustAndBurgCount.items(), key=lambda x: x[1], reverse=True)
 
 # Print this new list sorted from values in dictionary:
-for iCount in range (0,99):
+for iCount in range (0, len(lstCustSorted)):
     print(lstCustSorted[iCount])
