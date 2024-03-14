@@ -1,4 +1,4 @@
-# Camden Hatch, Rasa Ichimori, Machael Backman, Jooyoung Jeon, Porter Rasmussen
+# Camden Hatch, Rasa Ichimori, Machael Backman, Porter Rasmussen
 # Section 4
 # This program tracks exactly how many hamburgers each customer eats.  
 
@@ -40,15 +40,34 @@ class Customer (Person):
     # Instance variable in the constructor that is assigned an order object
         self.order = Order ()
 
+# Variable for queue to assign customer items:
+queueCustomer = []
 
+# Variable for a dictionary with key as customer name (str) and values as total burgers ordered (int):
+dictCustAndBurgCount = {}
 
 # For loop:
-
+for iCount in range (0, 99) :
     # Adding 100 customers into queue:
+    # starts with creating a customer object:
+    objCustomer = Customer()
+    # Append it to queue list: 
+    queueCustomer.append(objCustomer)
 
-    # Customer's name as key in dictionary:
+    # Check if object name is already in dictionary:
+    if objCustomer.customer_name in dictCustAndBurgCount :
+        # Add order count to object in dictionary with same name:
+        dictCustAndBurgCount[objCustomer.customer_name].order += objCustomer.order
+    else :
+        # Add customer's name as new key in dictionary and then give the loop the signal to continue to a new object:
+        dictCustAndBurgCount[objCustomer.customer_name] = objCustomer.order
+        iCount += 1
 
-
-
+    
 # Print list of customers and total burgers ordered sorted by most number of burgers:
+# Sort dictionary into a list based on value greatest to smallest:
+lstCustSorted = sorted(dictCustAndBurgCount.items(), key=lambda x: x[1], reverse=True)
 
+# Print this new list sorted from values in dictionary:
+for iCount in range (0,99):
+    print(lstCustSorted[iCount])
