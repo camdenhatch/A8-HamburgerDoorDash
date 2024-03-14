@@ -47,7 +47,7 @@ queueCustomer = []
 dictCustAndBurgCount = {}
 
 # For loop:
-for iCount in range (0, 99) :
+for iCount in range (0, 100) :
     # Adding 100 customers into queue:
     # starts with creating a customer object:
     objCustomer = Customer ()
@@ -70,7 +70,11 @@ for iCount in range (0, 99) :
 lstCustSorted = sorted(dictCustAndBurgCount.items(), key=lambda x: x[1], reverse=True)
 
 # Print this new list sorted from values in dictionary:
-for iCount in range (0, (len(lstCustSorted) -1) ) :
+for iCount in range (0, len(lstCustSorted)) :
     print(f"{lstCustSorted[iCount][0].ljust(19)} {lstCustSorted[iCount][1]}")
     
+    iCount += 1
+
+for iCount in range (0, len(queueCustomer)) :
+    print(queueCustomer[iCount].customer_name)
     iCount += 1
