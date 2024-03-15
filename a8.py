@@ -74,7 +74,3 @@ for iCount in range (0, len(lstCustSorted)) :
     print(f"{lstCustSorted[iCount][0].ljust(19)} {lstCustSorted[iCount][1]}")
     
     iCount += 1
-
-for iCount in range (0, len(queueCustomer)) :
-    print(queueCustomer[iCount].customer_name)
-    iCount += 1
